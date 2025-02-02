@@ -1,0 +1,18 @@
+
+docker buildx create --name mybuilder --use
+
+docker buildx ls
+
+docker buildx build --platform linux/amd64,linux/arm64 -t your-image-name .
+
+# Enable BuildKit
+export DOCKER_BUILDKIT=1
+
+
+# Disable BuildKit
+export DOCKER_BUILDKIT=0 
+docker build .
+
+DOCKER_BUILDKIT=0 docker build .
+
+
